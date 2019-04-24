@@ -22,7 +22,7 @@
         <Button x:Name="buttonEncrypt" Content="Encrypt" Grid.Column="1" HorizontalAlignment="Center" Margin="0 150 0 0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="buttonDecrypt" Content="Decrypt" Grid.Column="1" HorizontalAlignment="Center" Margin="0 250 0 0" VerticalAlignment="Top" Width="75"/>
 
-        <Button x:Name="buttonRead" Content="Read from file" HorizontalAlignment="Left" Margin="10 0 0 0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="buttonRead" Content="Read from file" HorizontalAlignment="Left" Margin="10 0 0 0" Grid.Row="1" VerticalAlignment="Top" Click="ButtonRead_Click"/>
         <Button x:Name="buttonSave" Content="Save to file" HorizontalAlignment="Right" Margin="0 0 10 0" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"/>
     </Grid>
 </Window>

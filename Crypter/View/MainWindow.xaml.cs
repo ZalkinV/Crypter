@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Crypter.Model;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,27 @@ namespace Crypter
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonRead_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.docx)|*.docx";
+
+            if (openFileDialog.ShowDialog() != true)
+                return;
+
+            string fileText = string.Empty;
+            string fileName = openFileDialog.FileName;
+            if (openFileDialog.FilterIndex == 1)
+            {
+                fileText = new TxtFileHandler().Read(fileName);
+            }
+            else if (openFileDialog.FilterIndex == 2)
+            {
+                fileText = new DocxFileHandler().Read(fileName);
+            }
+            textBoxInput.Text = fileText;
         }
     }
 }
