@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\DocxFileHandler.cs" />
     <Compile Include="Model\IFileHandler.cs" />
     <Compile Include="Model\TxtFileHandler.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
