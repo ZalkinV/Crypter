@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Crypter.Control
 {
-    class CaesarCrypter
+    static class CaesarCrypter
     {
+        public static string Encrypt(string text, int step)
+        {
+            return text;
+        }
     }
 }
