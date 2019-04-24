@@ -12,5 +12,10 @@ namespace Crypter.Control
         {
             return text;
         }
+
+        public static string Decrypt(string text, int step)
+        {
+            return Encrypt(text, -step);
+        }
     }
 }
