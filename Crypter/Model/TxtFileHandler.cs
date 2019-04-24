@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Crypter.Model
 {
@@ -10,7 +11,7 @@ namespace Crypter.Model
     {
         public string Read(string filename)
         {
-            throw new NotImplementedException();
+            return File.ReadAllText(filename);
         }
 
         public void Save(string filename, string text)
