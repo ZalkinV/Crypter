@@ -1,4 +1,5 @@
 ﻿using Crypter.Model;
+using Crypter.Control;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,16 @@ namespace Crypter
                 fileText = new DocxFileHandler().Read(fileName);
             }
             textBoxInput.Text = fileText;
+        }
+
+        private void ButtonEncrypt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonDecrypt_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
