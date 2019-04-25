@@ -51,7 +51,22 @@ namespace Crypter
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.docx)|*.docx";
 
+            if (saveFileDialog.ShowDialog() != true)
+                return;
+
+            string fileName = saveFileDialog.FileName;
+            string text = textBoxOutput.Text;
+            if (saveFileDialog.FilterIndex == 1)
+            {
+                new TxtFileHandler().Save(fileName, text);
+            }
+            else if (saveFileDialog.FilterIndex == 2)
+            {
+                new DocxFileHandler().Save(fileName, text);
+            }
         }
 
         private void ButtonEncrypt_Click(object sender, RoutedEventArgs e)
