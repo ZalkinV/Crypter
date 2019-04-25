@@ -58,5 +58,18 @@ namespace Crypter
         {
 
         }
+
+        private void CryptButtons_Click(object sender, RoutedEventArgs e, string textStep)
+        {
+            int step;
+            if (int.TryParse(textStep, out step))
+            {
+                textBoxOutput.Text = CaesarCrypter.Encrypt(textBoxInput.Text, step);
+            }
+            else
+            {
+                MessageBox.Show("Step must be a digital number!", "Wrong step");
+            }
+        }
     }
 }
