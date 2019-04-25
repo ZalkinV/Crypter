@@ -18,9 +18,13 @@ namespace Crypter.Control
                 {
                     symbols[i] = DoShift(symbols[i], step, '0', '9');
                 }
-                if ('а' <= char.ToLower(symbols[i]) && char.ToLower(symbols[i]) <= 'я')
+                if ('а' <= symbols[i] && symbols[i] <= 'я')
                 {
                     symbols[i] = DoShift(symbols[i], step, 'а', 'я');
+                }
+                if ('А' <= symbols[i] && symbols[i] <= 'Я')
+                {
+                    symbols[i] = DoShift(symbols[i], step, 'А', 'Я');
                 }
             }
 
