@@ -20,7 +20,10 @@ namespace Crypter.Control
 
         private static char DoShift(char current, int step, char first, char last)
         {
-            return first;
+            int alphabetSize = last - first + 1;
+            step %= alphabetSize;
+            int shift = (current - first + step) % alphabetSize;
+            return (char)(first + shift);
         }
     }
 }
