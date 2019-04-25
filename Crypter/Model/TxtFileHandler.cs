@@ -16,7 +16,7 @@ namespace Crypter.Model
 
         public void Save(string filename, string text)
         {
-            throw new NotImplementedException();
+            File.WriteAllText(filename, text);
         }
     }
 }
