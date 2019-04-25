@@ -23,6 +23,11 @@ namespace Crypter
     /// </summary>
     public partial class MainWindow : Window
     {
+        const string FILE_FILTERS =
+            "Text files (*.txt)|*.txt|" +
+            "Word documents (*.docx)|*.docx|" +
+            "All files (*.*)|*.*";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +38,7 @@ namespace Crypter
             IFileHandler fileHandler;
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.docx)|*.docx";
+            openFileDialog.Filter = FILE_FILTERS;
 
             if (openFileDialog.ShowDialog() != true)
                 return;
@@ -51,7 +56,7 @@ namespace Crypter
             IFileHandler fileHandler;
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.docx)|*.docx";
+            saveFileDialog.Filter = FILE_FILTERS;
 
             if (saveFileDialog.ShowDialog() != true)
                 return;
