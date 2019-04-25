@@ -51,12 +51,12 @@ namespace Crypter
 
         private void ButtonEncrypt_Click(object sender, RoutedEventArgs e)
         {
-
+            CryptButtons_Click(sender, e, textBoxStep.Text);
         }
 
         private void ButtonDecrypt_Click(object sender, RoutedEventArgs e)
         {
-
+            CryptButtons_Click(sender, e, "-" + textBoxStep.Text);
         }
 
         private void CryptButtons_Click(object sender, RoutedEventArgs e, string textStep)
