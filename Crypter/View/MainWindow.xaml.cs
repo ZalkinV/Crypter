@@ -49,6 +49,11 @@ namespace Crypter
             textBoxInput.Text = fileText;
         }
 
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void ButtonEncrypt_Click(object sender, RoutedEventArgs e)
         {
             if (!IsStepValid(textBoxStep.Text))
