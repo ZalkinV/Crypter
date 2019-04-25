@@ -30,43 +30,38 @@ namespace Crypter
 
         private void ButtonRead_Click(object sender, RoutedEventArgs e)
         {
+            IFileHandler fileHandler;
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.docx)|*.docx";
 
             if (openFileDialog.ShowDialog() != true)
                 return;
 
-            string fileText = string.Empty;
-            string fileName = openFileDialog.FileName;
-            if (openFileDialog.FilterIndex == 1)
-            {
-                fileText = new TxtFileHandler().Read(fileName);
-            }
-            else if (openFileDialog.FilterIndex == 2)
-            {
-                fileText = new DocxFileHandler().Read(fileName);
-            }
-            textBoxInput.Text = fileText;
+            if (openFileDialog.FilterIndex == 2)
+                fileHandler = new DocxFileHandler();
+            else
+                fileHandler = new TxtFileHandler();
+
+            textBoxInput.Text = fileHandler?.Read(openFileDialog.FileName);
         }
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
+            IFileHandler fileHandler;
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.docx)|*.docx";
 
             if (saveFileDialog.ShowDialog() != true)
                 return;
 
-            string fileName = saveFileDialog.FileName;
-            string text = textBoxOutput.Text;
-            if (saveFileDialog.FilterIndex == 1)
-            {
-                new TxtFileHandler().Save(fileName, text);
-            }
-            else if (saveFileDialog.FilterIndex == 2)
-            {
-                new DocxFileHandler().Save(fileName, text);
-            }
+            if (saveFileDialog.FilterIndex == 2)
+                fileHandler = new DocxFileHandler();
+            else
+                fileHandler = new TxtFileHandler();
+
+            fileHandler?.Save(saveFileDialog.FileName, textBoxOutput.Text);
         }
 
         private void ButtonEncrypt_Click(object sender, RoutedEventArgs e)
