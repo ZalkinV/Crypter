@@ -36,6 +36,12 @@ namespace Crypter.Control
         {
             int alphabetSize = last - first + 1;
             step %= alphabetSize;
+
+            if (step < 0)
+            {
+                step += alphabetSize;
+            }
+
             int shift = (current - first + step) % alphabetSize;
             return (char)(first + shift);
         }
