@@ -17,5 +17,10 @@ namespace Crypter.Control
         {
             return Encrypt(text, -step);
         }
+
+        private static char DoShift(char current, int step, char first, char last)
+        {
+            return first;
+        }
     }
 }
