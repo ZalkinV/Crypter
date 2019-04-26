@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Crypter.Control
 {
+    enum Languages
+    {
+        Russian, English, Digits,
+    }
+
     class Alphabet
     {
         HashSet<char> letters;
