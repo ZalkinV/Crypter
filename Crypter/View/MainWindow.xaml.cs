@@ -35,6 +35,8 @@ namespace Crypter
         {
             InitializeComponent();
             selectedLanguages = new HashSet<Languages>();
+            checkBoxLangRus.IsChecked = true;
+            checkBoxLangDig.IsChecked = true;
 
             caesarCrypter = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.Digits));
         }
@@ -101,6 +103,21 @@ namespace Crypter
                 isValid = false;
             }
             return isValid;
+        }
+
+        private void CheckBoxLangRus_Checked(object sender, RoutedEventArgs e)
+        {
+            selectedLanguages.Add(Languages.Russian);
+        }
+
+        private void CheckBoxLangEng_Checked(object sender, RoutedEventArgs e)
+        {
+            selectedLanguages.Add(Languages.English);
+        }
+
+        private void CheckBoxLangDig_Checked(object sender, RoutedEventArgs e)
+        {
+            selectedLanguages.Add(Languages.Digits);
         }
     }
 }
