@@ -14,5 +14,11 @@ namespace Crypter.Control
         {
             get { return alphabet[index]; }
         }
+
+        public Alphabet(string alphabet)
+        {
+            letters = alphabet.ToHashSet();
+            this.alphabet = alphabet.ToCharArray();
+        }
     }
 }
