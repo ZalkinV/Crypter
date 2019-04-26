@@ -20,7 +20,7 @@
         <TextBox x:Name="textBoxInput" Margin="10 5 0 5" Grid.Column="0" TextWrapping="Wrap"/>
         <TextBox x:Name="textBoxOutput" Margin="0 5 10 5" Grid.Column="2" TextWrapping="Wrap" IsReadOnly="True"/>
 
-        <Label x:Name="labelStep" Content="Step:" Grid.Column="1" HorizontalAlignment="Left" Margin="25 200 0 0" VerticalAlignment="Top"/>
+        <Label x:Name="labelStep" Target="{Binding ElementName=textBoxStep}" Content="_Step:" Grid.Column="1" HorizontalAlignment="Left" Margin="25 200 0 0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBoxStep" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0 200 0 0" VerticalAlignment="Top" Width="75" MaxLines="1" MaxLength="10"/>
         <Button x:Name="buttonEncrypt" Content="Encrypt" Grid.Column="1" HorizontalAlignment="Center" Margin="0 230 0 0" VerticalAlignment="Top" Width="75" Click="ButtonEncrypt_Click"/>
         <Button x:Name="buttonDecrypt" Content="Decrypt" Grid.Column="1" HorizontalAlignment="Center" Margin="0 260 0 0" VerticalAlignment="Top" Width="75" Click="ButtonDecrypt_Click"/>
