@@ -37,8 +37,16 @@ namespace Crypter
             selectedLanguages = new HashSet<Languages>();
             checkBoxLangRus.IsChecked = true;
             checkBoxLangDig.IsChecked = true;
+        }
 
-            caesarCrypter = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.Digits));
+        private void InitializeCaesarCrypter()
+        {
+            Alphabet[] selectedAlphabets = new Alphabet[selectedLanguages.Count];
+            int iCurrentLanguage = 0;
+            foreach (Languages language in selectedLanguages)
+                selectedAlphabets[iCurrentLanguage++] = new Alphabet(language);
+
+            caesarCrypter = new CaesarCrypter(selectedAlphabets);
         }
 
         private void ButtonRead_Click(object sender, RoutedEventArgs e)
@@ -82,6 +90,7 @@ namespace Crypter
             if (!IsStepValid(textBoxStep.Text))
                 return;
 
+            InitializeCaesarCrypter();
             textBoxOutput.Text = caesarCrypter.Encrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
         }
 
@@ -90,6 +99,7 @@ namespace Crypter
             if (!IsStepValid(textBoxStep.Text))
                 return;
 
+            InitializeCaesarCrypter();
             textBoxOutput.Text = caesarCrypter.Decrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
         }
 
