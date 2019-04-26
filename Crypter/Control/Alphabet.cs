@@ -22,6 +22,11 @@ namespace Crypter.Control
 
         public Alphabet(string alphabet)
         {
+            InitializeAlphabet(alphabet);
+        }
+
+        private void InitializeAlphabet(string alphabet)
+        {
             letters = alphabet.ToHashSet();
             this.alphabet = alphabet.ToCharArray();
         }
