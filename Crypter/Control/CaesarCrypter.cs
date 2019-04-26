@@ -8,6 +8,8 @@ namespace Crypter.Control
 {
     class CaesarCrypter
     {
+        Alphabet[] alphabets;
+
         public string Encrypt(string text, int step)
         {
             char[] symbols = text.ToCharArray();
