@@ -29,10 +29,13 @@ namespace Crypter
             "All files (*.*)|*.*";
 
         CaesarCrypter caesarCrypter;
+        HashSet<Languages> selectedLanguages;
 
         public MainWindow()
         {
             InitializeComponent();
+            selectedLanguages = new HashSet<Languages>();
+
             caesarCrypter = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.Digits));
         }
 
