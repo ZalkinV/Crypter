@@ -10,6 +10,14 @@ namespace Crypter.Control
     {
         Alphabet[] alphabets;
 
+        public CaesarCrypter(params string[] alphabets)
+        {
+            this.alphabets = new Alphabet[alphabets.Length];
+            for (int i = 0; i < alphabets.Length; i++)
+            {
+                this.alphabets[i] = new Alphabet(alphabets[i]);
+            }
+        }
         public string Encrypt(string text, int step)
         {
             char[] symbols = text.ToCharArray();
