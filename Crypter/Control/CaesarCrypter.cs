@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Crypter.Control
 {
-    static class CaesarCrypter
+    class CaesarCrypter
     {
-        public static string Encrypt(string text, int step)
+        public string Encrypt(string text, int step)
         {
             char[] symbols = text.ToCharArray();
 
@@ -31,12 +31,12 @@ namespace Crypter.Control
             return new string(symbols);
         }
 
-        public static string Decrypt(string text, int step)
+        public string Decrypt(string text, int step)
         {
             return Encrypt(text, -step);
         }
 
-        private static char DoShift(char current, int step, char first, char last)
+        private char DoShift(char current, int step, char first, char last)
         {
             int alphabetSize = last - first + 1;
             step %= alphabetSize;

@@ -74,7 +74,7 @@ namespace Crypter
             if (!IsStepValid(textBoxStep.Text))
                 return;
 
-            textBoxOutput.Text = CaesarCrypter.Encrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
+            textBoxOutput.Text = new CaesarCrypter().Encrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
         }
 
         private void ButtonDecrypt_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ namespace Crypter
             if (!IsStepValid(textBoxStep.Text))
                 return;
 
-            textBoxOutput.Text = CaesarCrypter.Decrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
+            textBoxOutput.Text = new CaesarCrypter().Decrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
         }
 
         private bool IsStepValid(string textStep)
