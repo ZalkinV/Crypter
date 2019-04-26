@@ -119,5 +119,13 @@ namespace Crypter
         {
             selectedLanguages.Add(Languages.Digits);
         }
+
+        private void CheckBoxLangChanged(Languages language, bool? isChecked)
+        {
+            if (isChecked == true)
+                selectedLanguages.Add(language);
+            else if (isChecked == false)
+                selectedLanguages.Remove(language);
+        }
     }
 }
