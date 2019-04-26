@@ -8,5 +8,7 @@ namespace Crypter.Control
 {
     class Alphabet
     {
+        HashSet<char> letters;
+        char[] alphabet;
     }
 }
