@@ -20,5 +20,10 @@ namespace Crypter.Control
             letters = alphabet.ToHashSet();
             this.alphabet = alphabet.ToCharArray();
         }
+
+        public bool Contains(char letter)
+        {
+            return letters.Contains(letter);
+        }
     }
 }
