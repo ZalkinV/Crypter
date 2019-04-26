@@ -24,11 +24,20 @@ namespace Crypter.Control
 
             for (int i = 0; i < symbols.Length; i++)
             {
+                bool isUpper = false;
+                if (char.IsUpper(symbols[i]))
+                {
+                    isUpper = true;
+                    symbols[i] = char.ToLower(symbols[i]);
+                }
+
                 foreach (Alphabet alphabet in this.alphabets)
                 {
                     if (alphabet.Contains(symbols[i]))
                     {
                         symbols[i] = DoShift(alphabet, alphabet[symbols[i]], step);
+                        if (isUpper)
+                            symbols[i] = char.ToUpper(symbols[i]);
                     }
                 }
             }
