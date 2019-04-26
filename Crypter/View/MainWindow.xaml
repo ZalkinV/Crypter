@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -20,18 +20,27 @@
         <TextBox x:Name="textBoxInput" Margin="10 5 0 5" Grid.Column="0" TextWrapping="Wrap"/>
         <TextBox x:Name="textBoxOutput" Margin="0 5 10 5" Grid.Column="2" TextWrapping="Wrap" IsReadOnly="True"/>
 
-        <Label x:Name="labelLanguages" Content="Languages:" Grid.Column="1" HorizontalAlignment="Left" Margin="0 135 0 0" VerticalAlignment="Top"></Label>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="20 140 0 0" VerticalAlignment="Top">
-            <CheckBox x:Name="checkBoxLangRus" Content="Russian" Width="70" Unchecked="CheckBoxLangRus_Changed" Checked="CheckBoxLangRus_Changed"/>
-            <CheckBox x:Name="checkBoxLangEng" Content="English" Width="70" Checked="CheckBoxLangEng_Changed" Unchecked="CheckBoxLangEng_Changed"/>
-            <CheckBox x:Name="checkBoxLangDig" Content="Digits" Width="70" Checked="CheckBoxLangDig_Changed" Unchecked="CheckBoxLangDig_Changed"/>
+        <StackPanel Grid.Column="1" Margin="10 5 10 5" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="labelLanguages" Content="Languages:" Margin="0 0 10 0" VerticalAlignment="Center"></Label>
+                <StackPanel>
+                    <CheckBox x:Name="checkBoxLangRus" Content="Russian" Width="70" Unchecked="CheckBoxLangRus_Changed" Checked="CheckBoxLangRus_Changed"/>
+                    <CheckBox x:Name="checkBoxLangEng" Content="English" Width="70" Checked="CheckBoxLangEng_Changed" Unchecked="CheckBoxLangEng_Changed"/>
+                    <CheckBox x:Name="checkBoxLangDig" Content="Digits" Width="70" Checked="CheckBoxLangDig_Changed" Unchecked="CheckBoxLangDig_Changed"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <Label x:Name="labelStep" Target="{Binding ElementName=textBoxStep}" Content="_Step:" Margin="0 0 10 0"/>
+                <TextBox x:Name="textBoxStep" Width="75" VerticalAlignment="Center" MaxLines="1" MaxLength="10"/>
+            </StackPanel>
+
+            <StackPanel Margin="0 30 0 0">
+                <Button x:Name="buttonEncrypt" Content="Encrypt" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Click="ButtonEncrypt_Click"/>
+                <Button x:Name="buttonDecrypt" Content="Decrypt" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Click="ButtonDecrypt_Click"/>
+            </StackPanel>
         </StackPanel>
         
-        <Label x:Name="labelStep" Target="{Binding ElementName=textBoxStep}" Content="_Step:" Grid.Column="1" HorizontalAlignment="Left" Margin="25 200 0 0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBoxStep" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0 200 0 0" VerticalAlignment="Top" Width="75" MaxLines="1" MaxLength="10"/>
-        <Button x:Name="buttonEncrypt" Content="Encrypt" Grid.Column="1" HorizontalAlignment="Center" Margin="0 230 0 0" VerticalAlignment="Top" Width="75" Click="ButtonEncrypt_Click"/>
-        <Button x:Name="buttonDecrypt" Content="Decrypt" Grid.Column="1" HorizontalAlignment="Center" Margin="0 260 0 0" VerticalAlignment="Top" Width="75" Click="ButtonDecrypt_Click"/>
-
         <Button x:Name="buttonRead" Content="Read from file" HorizontalAlignment="Left" Margin="10 0 0 0" Grid.Row="1" VerticalAlignment="Top" Click="ButtonRead_Click"/>
         <Button x:Name="buttonSave" Content="Save to file" HorizontalAlignment="Right" Margin="0 0 10 0" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" Click="ButtonSave_Click"/>
     </Grid>
