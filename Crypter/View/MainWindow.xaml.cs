@@ -28,9 +28,12 @@ namespace Crypter
             "Word documents (*.docx)|*.docx|" +
             "All files (*.*)|*.*";
 
+        CaesarCrypter caesarCrypter;
+
         public MainWindow()
         {
             InitializeComponent();
+            caesarCrypter = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.Digits));
         }
 
         private void ButtonRead_Click(object sender, RoutedEventArgs e)
@@ -74,7 +77,7 @@ namespace Crypter
             if (!IsStepValid(textBoxStep.Text))
                 return;
 
-            textBoxOutput.Text = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.Digits)).Encrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
+            textBoxOutput.Text = caesarCrypter.Encrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
         }
 
         private void ButtonDecrypt_Click(object sender, RoutedEventArgs e)
@@ -82,7 +85,7 @@ namespace Crypter
             if (!IsStepValid(textBoxStep.Text))
                 return;
 
-            textBoxOutput.Text = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.Digits)).Decrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
+            textBoxOutput.Text = caesarCrypter.Decrypt(textBoxInput.Text, int.Parse(textBoxStep.Text));
         }
 
         private bool IsStepValid(string textStep)
