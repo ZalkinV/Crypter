@@ -31,6 +31,22 @@ namespace Crypter.Control
             this.alphabet = alphabet.ToCharArray();
         }
 
+        public Alphabet(Languages language)
+        {
+            switch (language)
+            {
+                case Languages.Russian:
+                    InitializeAlphabet("абвгдеёжзийклмнопрстуфхцчшщъыьэюя");
+                    break;
+                case Languages.English:
+                    InitializeAlphabet("abcdefghijklmnopqrstuvwxyz");
+                    break;
+                case Languages.Digits:
+                    InitializeAlphabet("0123456789");
+                    break;
+            }
+        }
+
         public bool Contains(char letter)
         {
             return letters.Contains(letter);
