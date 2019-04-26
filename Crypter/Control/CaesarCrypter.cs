@@ -24,17 +24,12 @@ namespace Crypter.Control
 
             for (int i = 0; i < symbols.Length; i++)
             {
-                if (char.IsDigit(symbols[i]))
+                foreach (Alphabet alphabet in this.alphabets)
                 {
-                    symbols[i] = DoShift(symbols[i], step, '0', '9');
-                }
-                if ('а' <= symbols[i] && symbols[i] <= 'я')
-                {
-                    symbols[i] = DoShift(symbols[i], step, 'а', 'я');
-                }
-                if ('А' <= symbols[i] && symbols[i] <= 'Я')
-                {
-                    symbols[i] = DoShift(symbols[i], step, 'А', 'Я');
+                    if (alphabet.Contains(symbols[i]))
+                    {
+                        symbols[i] = DoShift(alphabet, alphabet[symbols[i]], step);
+                    }
                 }
             }
 
@@ -46,18 +41,17 @@ namespace Crypter.Control
             return Encrypt(text, -step);
         }
 
-        private char DoShift(char current, int step, char first, char last)
+        private char DoShift(Alphabet alphabet, int currentIndex, int step)
         {
-            int alphabetSize = last - first + 1;
-            step %= alphabetSize;
+            step %= alphabet.Length;
 
             if (step < 0)
             {
-                step += alphabetSize;
+                step += alphabet.Length;
             }
 
-            int shift = (current - first + step) % alphabetSize;
-            return (char)(first + shift);
+            int shift = (currentIndex + step) % alphabet.Length;
+            return alphabet[shift];
         }
     }
 }
