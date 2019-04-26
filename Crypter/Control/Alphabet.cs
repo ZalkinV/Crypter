@@ -15,6 +15,8 @@ namespace Crypter.Control
     {
         HashSet<char> letters;
         char[] alphabet;
+        
+        public int Length { get; private set; }
         public char this[int index]
         {
             get { return alphabet[index]; }
@@ -29,6 +31,7 @@ namespace Crypter.Control
         {
             letters = alphabet.ToHashSet();
             this.alphabet = alphabet.ToCharArray();
+            Length = this.alphabet.Length;
         }
 
         public Alphabet(Languages language)
