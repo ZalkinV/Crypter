@@ -13,13 +13,17 @@ namespace Crypter.Control
 
     class Alphabet
     {
-        HashSet<char> letters;
+        Dictionary<char, int> letters;
         char[] alphabet;
         
         public int Length { get; private set; }
         public char this[int index]
         {
             get { return alphabet[index]; }
+        }
+        public int this[char letter]
+        {
+            get { return letters[letter]; }
         }
 
         public Alphabet(string alphabet)
@@ -29,7 +33,10 @@ namespace Crypter.Control
 
         private void InitializeAlphabet(string alphabet)
         {
-            letters = alphabet.ToHashSet();
+            letters = new Dictionary<char, int>();
+            for (int i = 0; i < alphabet.Length; i++)
+                letters.Add(alphabet[i], i);
+
             this.alphabet = alphabet.ToCharArray();
             Length = this.alphabet.Length;
         }
@@ -52,7 +59,7 @@ namespace Crypter.Control
 
         public bool Contains(char letter)
         {
-            return letters.Contains(letter);
+            return letters.ContainsKey(letter);
         }
     }
 }
