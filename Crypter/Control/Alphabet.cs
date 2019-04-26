@@ -10,5 +10,9 @@ namespace Crypter.Control
     {
         HashSet<char> letters;
         char[] alphabet;
+        public char this[int index]
+        {
+            get { return alphabet[index]; }
+        }
     }
 }
