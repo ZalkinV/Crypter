@@ -34,12 +34,11 @@ namespace Crypter.Control
                 foreach (Alphabet alphabet in this.alphabets)
                 {
                     if (alphabet.Contains(symbols[i]))
-                    {
                         symbols[i] = DoShift(alphabet, alphabet[symbols[i]], step);
-                        if (isUpper)
-                            symbols[i] = char.ToUpper(symbols[i]);
-                    }
                 }
+
+                if (isUpper)
+                    symbols[i] = char.ToUpper(symbols[i]);
             }
 
             return new string(symbols);
