@@ -20,7 +20,8 @@
         <TextBox x:Name="textBoxInput" Margin="10 5 0 5" Grid.Column="0" TextWrapping="Wrap"/>
         <TextBox x:Name="textBoxOutput" Margin="0 5 10 5" Grid.Column="2" TextWrapping="Wrap" IsReadOnly="True"/>
 
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="0 140 0 0" VerticalAlignment="Top">
+        <Label x:Name="labelLanguages" Content="Languages:" Grid.Column="1" HorizontalAlignment="Left" Margin="0 135 0 0" VerticalAlignment="Top"></Label>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="20 140 0 0" VerticalAlignment="Top">
             <CheckBox x:Name="checkBoxLangRus" Content="Russian" Width="70"/>
             <CheckBox x:Name="checkBoxLangEng" Content="English" Width="70"/>
             <CheckBox x:Name="checkBoxLangDig" Content="Digits" Width="70"/>
