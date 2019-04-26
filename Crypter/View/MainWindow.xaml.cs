@@ -105,19 +105,19 @@ namespace Crypter
             return isValid;
         }
 
-        private void CheckBoxLangRus_Checked(object sender, RoutedEventArgs e)
+        private void CheckBoxLangRus_Changed(object sender, RoutedEventArgs e)
         {
-            selectedLanguages.Add(Languages.Russian);
+            CheckBoxLangChanged(Languages.Russian, (sender as CheckBox).IsChecked);
         }
 
-        private void CheckBoxLangEng_Checked(object sender, RoutedEventArgs e)
+        private void CheckBoxLangEng_Changed(object sender, RoutedEventArgs e)
         {
-            selectedLanguages.Add(Languages.English);
+            CheckBoxLangChanged(Languages.English, (sender as CheckBox).IsChecked);
         }
 
-        private void CheckBoxLangDig_Checked(object sender, RoutedEventArgs e)
+        private void CheckBoxLangDig_Changed(object sender, RoutedEventArgs e)
         {
-            selectedLanguages.Add(Languages.Digits);
+            CheckBoxLangChanged(Languages.Digits, (sender as CheckBox).IsChecked);
         }
 
         private void CheckBoxLangChanged(Languages language, bool? isChecked)

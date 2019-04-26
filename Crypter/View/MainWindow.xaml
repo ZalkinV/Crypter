@@ -22,9 +22,9 @@
 
         <Label x:Name="labelLanguages" Content="Languages:" Grid.Column="1" HorizontalAlignment="Left" Margin="0 135 0 0" VerticalAlignment="Top"></Label>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="20 140 0 0" VerticalAlignment="Top">
-            <CheckBox x:Name="checkBoxLangRus" Content="Russian" Width="70" Checked="CheckBoxLangRus_Checked"/>
-            <CheckBox x:Name="checkBoxLangEng" Content="English" Width="70" Checked="CheckBoxLangEng_Checked"/>
-            <CheckBox x:Name="checkBoxLangDig" Content="Digits" Width="70" Checked="CheckBoxLangDig_Checked"/>
+            <CheckBox x:Name="checkBoxLangRus" Content="Russian" Width="70" Unchecked="CheckBoxLangRus_Changed" Checked="CheckBoxLangRus_Changed"/>
+            <CheckBox x:Name="checkBoxLangEng" Content="English" Width="70" Checked="CheckBoxLangEng_Changed" Unchecked="CheckBoxLangEng_Changed"/>
+            <CheckBox x:Name="checkBoxLangDig" Content="Digits" Width="70" Checked="CheckBoxLangDig_Changed" Unchecked="CheckBoxLangDig_Changed"/>
         </StackPanel>
         
         <Label x:Name="labelStep" Target="{Binding ElementName=textBoxStep}" Content="_Step:" Grid.Column="1" HorizontalAlignment="Left" Margin="25 200 0 0" VerticalAlignment="Top"/>
