@@ -19,7 +19,11 @@ namespace Crypter.Model
 
         public void Save(string filename, string text)
         {
-            throw new NotImplementedException();
+            using (DocX document = DocX.Create(filename))
+            {
+                document.InsertParagraph(text);
+                document.Save();
+            }
         }
     }
 }
