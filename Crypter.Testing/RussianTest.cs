@@ -10,8 +10,18 @@ namespace Crypter.Testing
         CaesarCrypter crypterRus = new CaesarCrypter(new Alphabet(Languages.Russian));
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestSimpleShift()
         {
+            string text = "беёю";
+            int step = 1;
+            string expectedEncrypt = "вёжя";
+            string expectedDecrypt = "адеэ";
+
+            string actualEncrypt = crypterRus.Encrypt(text, step);
+            string actualDecrypt = crypterRus.Decrypt(text, step);
+
+            Assert.AreEqual(expectedEncrypt, actualEncrypt);
+            Assert.AreEqual(expectedDecrypt, actualDecrypt);
         }
     }
 }
