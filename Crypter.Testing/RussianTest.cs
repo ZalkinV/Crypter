@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Crypter.Testing
 {
     [TestClass]
-    public class UnitTest1
+    public class RussianTest
     {
         [TestMethod]
         public void TestMethod1()
