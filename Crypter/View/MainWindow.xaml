@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crypter"
         mc:Ignorable="d"
-        Title="Crypter" MinHeight="250" Height="450" MinWidth="400" Width="800">
+        Title="Crypter" MinHeight="250" Height="450" MinWidth="400" Width="800" Icon="/Resources/CaesarImage.jpg">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
