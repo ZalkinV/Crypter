@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Crypter.Control
 {
-    class CaesarCrypter
+    public class CaesarCrypter
     {
         Alphabet[] alphabets;
 
