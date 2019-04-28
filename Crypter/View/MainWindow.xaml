@@ -32,7 +32,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                 <Label x:Name="labelStep" Target="{Binding ElementName=textBoxStep}" Content="_Step:" Margin="0 0 10 0"/>
-                <TextBox x:Name="textBoxStep" Width="75" VerticalAlignment="Center" MaxLines="1" MaxLength="10"/>
+                <TextBox x:Name="textBoxStep" Width="70" VerticalAlignment="Center" MaxLines="1" MaxLength="9"/>
             </StackPanel>
 
             <StackPanel Margin="0 30 0 0">
