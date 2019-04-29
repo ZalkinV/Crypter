@@ -33,5 +33,20 @@ namespace Crypter.Testing
                 CommonTestMethods.TestShift(crypterDig.Decrypt, text, steps[i], expectedDecrypts[i]);
             }
         }
+
+        [TestMethod]
+        public void TestFullAlphabet()
+        {
+            string text = "0123456789";
+
+            for (int i = 0; i <= text.Length; i++)
+            {
+                string expectedEncrypt = text.Remove(0, i) + text.Substring(0, i);
+                string expectedDecrypt = text.Substring(text.Length - i, i) + text.Remove(text.Length - i, i);
+
+                CommonTestMethods.TestShift(crypterDig.Encrypt, text, i, expectedEncrypt);
+                CommonTestMethods.TestShift(crypterDig.Decrypt, text, i, expectedDecrypt);
+            }
+        }
     }
 }
