@@ -22,16 +22,7 @@ namespace Crypter.Testing
         [TestMethod]
         public void TestDifferentShift()
         {
-            string text = "ая";
-            int[] steps = new int[] { 0, 1, 32, 33, 34, 66, 67 };
-            string[] expectedEncrypts = new string[] { "ая", "ба", "яю", "ая", "ба", "ая", "ба" };
-            string[] expectedDecrypts = new string[] { "ая", "яю", "ба", "ая", "яю", "ая", "яю" };
-
-            for (int i = 0; i < steps.Length; i++)
-            {
-                CommonTestMethods.TestShift(crypterRus.Encrypt, text, steps[i], expectedEncrypts[i]);
-                CommonTestMethods.TestShift(crypterRus.Decrypt, text, steps[i], expectedDecrypts[i]);
-            }
+            CommonTestMethods.TestDifferentShift(crypterRus.Encrypt, crypterRus.Decrypt, "абвгдеёжзийклмнопрстуфхцчшщъыьэюя");
         }
 
         [TestMethod]

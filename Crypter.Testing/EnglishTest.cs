@@ -18,5 +18,11 @@ namespace Crypter.Testing
             CommonTestMethods.TestShift(crypterEng.Encrypt, text, step, "cdef");
             CommonTestMethods.TestShift(crypterEng.Decrypt, text, step, "abcd");
         }
+
+        [TestMethod]
+        public void TestDifferentShift()
+        {
+            CommonTestMethods.TestDifferentShift(crypterEng.Encrypt, crypterEng.Decrypt, "abcdefghijklmnopqrstuvwxyz");
+        }
     }
 }
