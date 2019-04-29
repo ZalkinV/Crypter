@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonTestMethods.cs" />
     <Compile Include="DigitsTest.cs" />
     <Compile Include="RussianTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
