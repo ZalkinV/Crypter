@@ -37,16 +37,9 @@ namespace Crypter.Testing
         [TestMethod]
         public void TestFullAlphabet()
         {
-            string text = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-            
-            for (int i = 0; i <= text.Length; i++)
-            {
-                string expectedEncrypt = text.Remove(0, i) + text.Substring(0, i);
-                string expectedDecrypt = text.Substring(text.Length - i, i) + text.Remove(text.Length - i, i);
-
-                CommonTestMethods.TestShift(crypterRus.Encrypt, text, i, expectedEncrypt);
-                CommonTestMethods.TestShift(crypterRus.Decrypt, text, i, expectedDecrypt);
-            }
+            string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+            CommonTestMethods.TestEncryptFullAlphabet(crypterRus.Encrypt, alphabet);
+            CommonTestMethods.TestDecryptFullAlphabet(crypterRus.Decrypt, alphabet);
         }
     }
 }
