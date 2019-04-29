@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Crypter.Control
 {
-    enum Languages
+    public enum Languages
     {
         Russian, English, Digits,
     }
 
-    class Alphabet
+    public class Alphabet
     {
         Dictionary<char, int> letters;
         char[] alphabet;
