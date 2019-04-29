@@ -14,14 +14,9 @@ namespace Crypter.Testing
         {
             string text = "беёю";
             int step = 1;
-            string expectedEncrypt = "вёжя";
-            string expectedDecrypt = "адеэ";
 
-            string actualEncrypt = crypterRus.Encrypt(text, step);
-            string actualDecrypt = crypterRus.Decrypt(text, step);
-
-            Assert.AreEqual(expectedEncrypt, actualEncrypt);
-            Assert.AreEqual(expectedDecrypt, actualDecrypt);
+            CommonTestMethods.TestShift(crypterRus.Encrypt, text, step, "вёжя");
+            CommonTestMethods.TestShift(crypterRus.Decrypt, text, step, "адеэ");
         }
 
         [TestMethod]
@@ -34,11 +29,8 @@ namespace Crypter.Testing
 
             for (int i = 0; i < steps.Length; i++)
             {
-                string actualEncrypt = crypterRus.Encrypt(text, steps[i]);
-                string actualDecrypt = crypterRus.Decrypt(text, steps[i]);
-
-                Assert.AreEqual(expectedEncrypts[i], actualEncrypt);
-                Assert.AreEqual(expectedDecrypts[i], actualDecrypt);
+                CommonTestMethods.TestShift(crypterRus.Encrypt, text, steps[i], expectedEncrypts[i]);
+                CommonTestMethods.TestShift(crypterRus.Decrypt, text, steps[i], expectedDecrypts[i]);
             }
         }
 
@@ -52,11 +44,8 @@ namespace Crypter.Testing
                 string expectedEncrypt = text.Remove(0, i) + text.Substring(0, i);
                 string expectedDecrypt = text.Substring(text.Length - i, i) + text.Remove(text.Length - i, i);
 
-                string actualEncrypt = crypterRus.Encrypt(text, i);
-                string actualDecrypt = crypterRus.Decrypt(text, i);
-
-                Assert.AreEqual(expectedEncrypt, actualEncrypt);
-                Assert.AreEqual(expectedDecrypt, actualDecrypt);
+                CommonTestMethods.TestShift(crypterRus.Encrypt, text, i, expectedEncrypt);
+                CommonTestMethods.TestShift(crypterRus.Decrypt, text, i, expectedDecrypt);
             }
         }
     }
