@@ -25,5 +25,15 @@ namespace Crypter.Testing
                 TestShift(operation, alphabet, i, expectedEncrypt);
             }
         }
+
+        internal static void TestDecryptFullAlphabet(CrypterOperation operation, string alphabet)
+        {
+            for (int i = 0; i <= alphabet.Length; i++)
+            {
+                string expectedDecrypt = alphabet.Substring(alphabet.Length - i, i) + alphabet.Remove(alphabet.Length - i, i);
+
+                TestShift(operation, alphabet, i, expectedDecrypt);
+            }
+        }
     }
 }
