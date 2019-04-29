@@ -53,6 +53,7 @@
     <Compile Include="DigitsTest.cs" />
     <Compile Include="RussianTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EnglishTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
