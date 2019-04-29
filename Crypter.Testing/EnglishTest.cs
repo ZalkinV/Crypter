@@ -24,5 +24,11 @@ namespace Crypter.Testing
         {
             CommonTestMethods.TestDifferentShift(crypterEng.Encrypt, crypterEng.Decrypt, "abcdefghijklmnopqrstuvwxyz");
         }
+
+        [TestMethod]
+        public void TestFullAlphabet()
+        {
+            CommonTestMethods.TestFullAlphabet(crypterEng.Encrypt, crypterEng.Decrypt, "abcdefghijklmnopqrstuvwxyz");
+        }
     }
 }
