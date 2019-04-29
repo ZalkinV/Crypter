@@ -1,5 +1,4 @@
-﻿using System;
-using Crypter.Control;
+﻿using Crypter.Control;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Crypter.Testing
