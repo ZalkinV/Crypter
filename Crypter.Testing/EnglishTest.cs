@@ -29,5 +29,11 @@ namespace Crypter.Testing
         {
             CommonTestMethods.TestFullAlphabet(crypterEng.Encrypt, crypterEng.Decrypt, "abcdefghijklmnopqrstuvwxyz");
         }
+
+        [TestMethod]
+        public void TestUpperCase()
+        {
+            CommonTestMethods.TestFullAlphabet(crypterEng.Encrypt, crypterEng.Decrypt, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        }
     }
 }
