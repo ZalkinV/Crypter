@@ -15,5 +15,15 @@ namespace Crypter.Testing
         {
             Assert.AreEqual(result, operation(input, step));
         }
+
+        internal static void TestEncryptFullAlphabet(CrypterOperation operation, string alphabet)
+        {
+            for (int i = 0; i <= alphabet.Length; i++)
+            {
+                string expectedEncrypt = alphabet.Remove(0, i) + alphabet.Substring(0, i);
+
+                TestShift(operation, alphabet, i, expectedEncrypt);
+            }
+        }
     }
 }
