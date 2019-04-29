@@ -43,5 +43,16 @@ namespace Crypter.Testing
             CommonTestMethods.TestShift(crypter.Encrypt, mixedText, step, expectedEncrypt);
             CommonTestMethods.TestShift(crypter.Decrypt, mixedText, step, expectedDecrypt);
         }
+
+        [TestMethod]
+        public void TestRusEngDig()
+        {
+            CaesarCrypter crypter = new CaesarCrypter(new Alphabet(Languages.Russian), new Alphabet(Languages.English), new Alphabet(Languages.Digits));
+            string expectedEncrypt = "вгд234cde" + punctuation;
+            string expectedDecrypt = "абв012abc" + punctuation;
+
+            CommonTestMethods.TestShift(crypter.Encrypt, mixedText, step, expectedEncrypt);
+            CommonTestMethods.TestShift(crypter.Decrypt, mixedText, step, expectedDecrypt);
+        }
     }
 }
