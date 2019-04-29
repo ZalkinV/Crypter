@@ -28,9 +28,7 @@ namespace Crypter.Testing
         [TestMethod]
         public void TestFullAlphabet()
         {
-            string alphabet = "0123456789";
-            CommonTestMethods.TestEncryptFullAlphabet(crypterDig.Encrypt, alphabet);
-            CommonTestMethods.TestDecryptFullAlphabet(crypterDig.Decrypt, alphabet);
+            CommonTestMethods.TestFullAlphabet(crypterDig.Encrypt, crypterDig.Decrypt, "0123456789");
         }
     }
 }
