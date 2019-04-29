@@ -41,5 +41,23 @@ namespace Crypter.Testing
                 Assert.AreEqual(expectedDecrypts[i], actualDecrypt);
             }
         }
+
+        [TestMethod]
+        public void TestFullAlphabet()
+        {
+            string text = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+            
+            for (int i = 0; i <= text.Length; i++)
+            {
+                string expectedEncrypt = text.Remove(0, i) + text.Substring(0, i);
+                string expectedDecrypt = text.Substring(text.Length - i, i) + text.Remove(text.Length - i, i);
+
+                string actualEncrypt = crypterRus.Encrypt(text, i);
+                string actualDecrypt = crypterRus.Decrypt(text, i);
+
+                Assert.AreEqual(expectedEncrypt, actualEncrypt);
+                Assert.AreEqual(expectedDecrypt, actualDecrypt);
+            }
+        }
     }
 }
