@@ -54,6 +54,7 @@
     <Compile Include="RussianTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnglishTest.cs" />
+    <Compile Include="MixedLanguagesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
